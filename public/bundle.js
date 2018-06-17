@@ -27842,11 +27842,22 @@ const React = __webpack_require__(7);
 const Link = __webpack_require__(38).Link
 const style = __webpack_require__(266);
 
-/* the main page for the index route of this app */
-const Main = function() {
+/* The main page for the index route of this app that holds "BULB"*/
+const Main = () => {
+let lastAngle = 0;
+  const rotateBulb = () => {
+    lastAngle += 360;
+    const bulb = document.getElementsByClassName("lightbulb")[0];
+    bulb.style.transform = "rotate(" + lastAngle + "deg) scale(10)";
+  }
+  
   return (
-    React.createElement("div", null, 
-      React.createElement("h1", null, "Hello World!")
+    React.createElement("div", {className: "lightbulb", onClick: rotateBulb}, 
+        React.createElement("span", {className: "ico ico-lightbulb"}), 
+        React.createElement("span", {className: "ico ico-lightbulb1"}), 
+        React.createElement("span", {className: "ico ico-lightbulb2"}), 
+        React.createElement("span", {className: "ico ico-lightbulb3"}), 
+      React.createElement("span", {className: "ico ico-lightbulb4"})
     )
   );
 };
@@ -27874,8 +27885,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../../../rbd/pnpm-volume/b29586c0-3e3b-4617-8ff1-8a97c127d14d/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./Main.css", function() {
-			var newContent = require("!!../../../rbd/pnpm-volume/b29586c0-3e3b-4617-8ff1-8a97c127d14d/node_modules/.registry.npmjs.org/css-loader/0.28.11/node_modules/css-loader/index.js!./Main.css");
+		module.hot.accept("!!../../node_modules/css-loader/index.js!./Main.css", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!./Main.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -27893,7 +27904,7 @@ exports = module.exports = __webpack_require__(268)(false);
 
 
 // module
-exports.push([module.i, "body {\n  background: green;\n}", ""]);
+exports.push([module.i, "/* Main styles */\nbody {\n  background: green;\n}\n\n\n/* BULB styles */\n.lightbulb {\n  position: relative;\n  top: 300px;\n  left: 48%;\n  cursor: pointer;\n  display: inline-block;\n  width: 19px;\n  height: 28px;\n  transform: rotate(0deg) scale(10);\n  transition: all 1.5s;\n}\n\n.ico {\n   background: #ccc;\n   position: absolute;\n   display: inline-block;\n}\n\n.ico-lightbulb {\n  border-radius: 100%;\n  height: 1.26em;\n  width: 1.16em;\n}\n\n.ico-lightbulb1 {\n  height: 0.2em;\n  width: 0.6em;\n  top: 1.05em;\n  left: 0.3em;\n}\n.ico-lightbulb2 {\n  height: 0.12em;\n  width: 0.6em;\n  top: 1.3em;\n  left: 0.30em;\n}\n.ico-lightbulb3{\n  height: 0.12em;\n  width: 0.55em;\n  top: 1.5em;\n  left: 0.32em;\n}\n.ico-lightbulb4 {\n  height: 0.06em;\n  width: 0.26em;\n  top: 1.7em;\n  left: 0.46em;\n}\n", ""]);
 
 // exports
 
