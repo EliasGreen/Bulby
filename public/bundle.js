@@ -24442,6 +24442,7 @@ let lastAngle = 0;
     lastAngle += 360;
     const bulb = document.getElementsByClassName("lightbulb")[0];
     bulb.style.transform = "rotate(" + lastAngle + "deg) scale(10)";
+    
   }
   
   return (
