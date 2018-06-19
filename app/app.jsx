@@ -1,26 +1,27 @@
 const React = require('react');
 const { render } = require('react-dom');
 
-// router
 const Route = require('react-router-dom').Route;
 const BrowserRouter = require('react-router-dom').BrowserRouter;
 const hashHistory = require('react-router-dom').hashHistory;
-
-// redux
-const { createStore } = require('redux');
-const { Provider } = require('react-redux');
-const reducers = require('./reducers');
-
-let store = createStore(reducers);
 
 /* Import Components */
 const Main = require('./components/Main');
 
 render((
-  <Provider store={store}>
-    <BrowserRouter>
-      <div>
-        <Route exact path="/" component={Main}/>
-      </div>
-    </BrowserRouter>
-  </Provider>), document.getElementById('main'));
+<BrowserRouter>
+  <div>
+    <Route exact path="/" component={Main}/>
+  </div>
+</BrowserRouter>), document.getElementById('main'));
+
+if ('serviceWorker' in navigator) {
+                    console.log('Okay cool, this browser supports Service Workers.');
+                    navigator.serviceWorker.register('sw.js')
+                      .then(registration => {
+                        console.log('Registered!', registration);
+                      })
+                      .catch(error => {
+                        console.log('Something went terribly wrong! 😬', error);
+                      });
+                  };
