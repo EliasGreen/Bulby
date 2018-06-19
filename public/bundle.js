@@ -2451,6 +2451,18 @@ React.createElement(BrowserRouter, null,
   )
 )), document.getElementById('main'));
 
+if ('serviceWorker' in navigator) {
+                    console.log('Okay cool, this browser supports Service Workers.');
+                    navigator.serviceWorker.register('sw.js')
+                      .then(registration => {
+                        console.log('Registered!', registration);
+                      })
+                      .catch(error => {
+                        console.log('Something went terribly wrong! 😬', error);
+                      });
+                  };
+
+
 /***/ }),
 /* 32 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -24435,14 +24447,13 @@ const React = __webpack_require__(0);
 const Link = __webpack_require__(12).Link
 const style = __webpack_require__(70);
 
-/* The main page for the index route of this app that holds "BULB"*/
+
 const Main = () => {
 let lastAngle = 0;
   const rotateBulb = () => {
     lastAngle += 360;
     const bulb = document.getElementsByClassName("lightbulb")[0];
-    bulb.style.transform = "rotate(" + lastAngle + "deg) scale(10)";
-    
+    bulb.style.transform = "rotate(" + lastAngle + "deg) scale(10) translateZ(0)";
   }
   
   return (
@@ -24517,7 +24528,7 @@ exports = module.exports = __webpack_require__(72)(false);
 
 
 // module
-exports.push([module.i, "/* Main styles */\nbody {\n  background: green;\n}\n\n\n/* BULB styles */\n.lightbulb {\n  position: relative;\n  top: 300px;\n  left: 48%;\n  cursor: pointer;\n  display: inline-block;\n  width: 19px;\n  height: 28px;\n  transform: rotate(0deg) scale(10);\n  transition: all 1.5s;\n}\n\n.ico {\n   background: #ccc;\n   position: absolute;\n   display: inline-block;\n}\n\n.ico-lightbulb {\n  border-radius: 100%;\n  height: 1.26em;\n  width: 1.16em;\n}\n\n.ico-lightbulb1 {\n  height: 0.2em;\n  width: 0.6em;\n  top: 1.05em;\n  left: 0.3em;\n}\n.ico-lightbulb2 {\n  height: 0.12em;\n  width: 0.6em;\n  top: 1.3em;\n  left: 0.30em;\n}\n.ico-lightbulb3{\n  height: 0.12em;\n  width: 0.55em;\n  top: 1.5em;\n  left: 0.32em;\n}\n.ico-lightbulb4 {\n  height: 0.06em;\n  width: 0.26em;\n  top: 1.7em;\n  left: 0.46em;\n}\n", ""]);
+exports.push([module.i, "/* Main styles */\nbody {\n  background: green;\n}\n\n\n/* BULB styles */\n.lightbulb {\n  position: relative;\n  top: 300px;\n  left: 48%;\n  cursor: pointer;\n  display: inline-block;\n  width: 19px;\n  height: 28px;\n  transform: rotate(0deg) scale(10) translateZ(0);\n  transition: all 1.5s;\n}\n\n.ico {\n   background: #ccc;\n   position: absolute;\n   display: inline-block;\n}\n\n.ico-lightbulb {\n  border-radius: 100%;\n  height: 1.26em;\n  width: 1.16em;\n}\n\n.ico-lightbulb1 {\n  height: 0.2em;\n  width: 0.6em;\n  top: 1.05em;\n  left: 0.3em;\n}\n.ico-lightbulb2 {\n  height: 0.12em;\n  width: 0.6em;\n  top: 1.3em;\n  left: 0.30em;\n}\n.ico-lightbulb3{\n  height: 0.12em;\n  width: 0.55em;\n  top: 1.5em;\n  left: 0.32em;\n}\n.ico-lightbulb4 {\n  height: 0.06em;\n  width: 0.26em;\n  top: 1.7em;\n  left: 0.46em;\n}\n", ""]);
 
 // exports
 
