@@ -2,7 +2,6 @@ const React = require('react');
 const Link = require('react-router-dom').Link
 const style = require('../styles/Main.css');
 
-
 const Main = () => {
 let lastAngle = 0;
   const rotateBulb = () => {
