@@ -1,0 +1,30 @@
+{
+  "name": "Bulby",
+  "short_name": "Bulby",
+  "icons": [{
+    "src": "https://cdn.glitch.com/b81bdd91-467c-4ec9-ba67-542616f21118%2Fpexels-photo-414648.jpeg?1529694292448",
+      "sizes": "128x128",
+      "type": "image/png"
+    }, {
+      "src": "https://cdn.glitch.com/b81bdd91-467c-4ec9-ba67-542616f21118%2Fpexels-photo-414648%20(1).jpeg?1529694309263",
+      "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "https://cdn.glitch.com/b81bdd91-467c-4ec9-ba67-542616f21118%2Fpexels-photo-414648%20(2).jpeg?1529694328347",
+      "sizes": "152x152",
+      "type": "image/png"
+    }, {
+      "src": "https://cdn.glitch.com/b81bdd91-467c-4ec9-ba67-542616f21118%2Fpexels-photo-414648%20(3).jpeg?1529694350520",
+      "sizes": "192x192",
+      "type": "image/png"
+    }, {
+      "src": "https://cdn.glitch.com/b81bdd91-467c-4ec9-ba67-542616f21118%2Fpexels-photo-414648%20(4).jpeg?1529694371961",
+      "sizes": "256x256",
+      "type": "image/png"
+    }],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f44289",
+  "theme_color": "#3affca",
+  "orientation": "portrait-primary"
+}

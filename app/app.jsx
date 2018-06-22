@@ -16,12 +16,11 @@ render((
 </BrowserRouter>), document.getElementById('main'));
 
 if ('serviceWorker' in navigator) {
-                    console.log('Okay cool, this browser supports Service Workers.');
-                    navigator.serviceWorker.register('sw.js')
-                      .then(registration => {
-                        console.log('Registered!', registration);
-                      })
-                      .catch(error => {
-                        console.log('Something went terribly wrong! 😬', error);
-                      });
-                  };
+  navigator.serviceWorker.register('sw.js')
+    .then(registration => {
+      console.log('Registered!', registration);
+    })
+    .catch(error => {
+      console.log('Something went terribly wrong! 😬', error);
+    });
+};
