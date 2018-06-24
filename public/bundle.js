@@ -2452,7 +2452,7 @@ React.createElement(BrowserRouter, null,
 )), document.getElementById('main'));
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js')
+  navigator.serviceWorker.register('../sw.js')
     .then(registration => {
       console.log('Registered!', registration);
     })

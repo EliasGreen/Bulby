@@ -3,7 +3,9 @@ const filesToCache = [
   'index.html',
   'app.jsx',
   'styles/Main.css',
-  'bundle.js'
+  'bundle.js',
+  'components',
+  'components/Main.jsx'
 ];
 
 const staticCacheName = 'pages-cache-v1';
